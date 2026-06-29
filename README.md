@@ -1,22 +1,55 @@
-# Triton API
 
-A FastAPI-based voyage simulation API that calculates fuel usage, voyage
-feasibility, reserve compliance, and estimated travel times for
-recreational and commercial vessels.
+# Triton
+### Intelligent Voyage Planning API for Recreational & Commercial Vessels
+
+> A FastAPI application that simulates marine voyages by calculating travel time, fuel consumption, reserve compliance, and voyage feasibility from vessel and route characteristics.
+
+---
+
+## Overview
+
+Triton was built as a backend API that demonstrates clean software architecture, REST API design, data validation, and domain modeling using a real-world marine use case.
+
+Given vessel specifications and voyage details, Triton determines:
+
+- Estimated travel time
+- Fuel consumption
+- Fuel remaining after arrival
+- Reserve fuel compliance
+- Overall voyage feasibility
+
+The project emphasizes readable code, strong validation, and extensibility for future marine navigation features.
+
+---
 
 ## Features
 
--   RESTful API built with FastAPI
--   Interactive Swagger UI (`/docs`)
--   Voyage simulation endpoint
--   Fuel burn and reserve calculations
--   Configurable vessel characteristics
--   Automatic validation with Pydantic
--   Docker-ready project structure
+- FastAPI REST API
+- Automatic OpenAPI documentation
+- Pydantic request/response validation
+- Voyage simulation engine
+- Fuel burn calculations
+- Reserve fuel verification
+- Structured JSON responses
+- Modular project architecture
+
+---
+
+## Tech Stack
+
+| Technology | Purpose |
+|------------|---------|
+| Python 3 | Core language |
+| FastAPI | REST API framework |
+| Pydantic | Validation & serialization |
+| Uvicorn | ASGI server |
+| Swagger UI | Interactive API documentation |
+
+---
 
 ## Project Structure
 
-``` text
+```text
 triton/
 ├── app/
 │   ├── main.py
@@ -29,10 +62,12 @@ triton/
 └── .gitignore
 ```
 
+---
+
 ## Installation
 
-``` bash
-git clone https://github.com/<your-username>/triton.git
+```bash
+git clone https://github.com/YOUR_USERNAME/triton.git
 cd triton
 
 python -m venv venv
@@ -40,26 +75,27 @@ python -m venv venv
 # Windows
 venv\Scripts\activate
 
-# macOS/Linux
-source venv/bin/activate
-
 pip install -r requirements.txt
 ```
 
+---
+
 ## Running the API
 
-``` bash
+```bash
 uvicorn app.main:app --reload
 ```
 
 Open:
 
--   http://127.0.0.1:8000/docs
--   http://127.0.0.1:8000/redoc
+- http://127.0.0.1:8000/docs
+- http://127.0.0.1:8000/redoc
+
+---
 
 ## Example Request
 
-``` json
+```json
 {
   "vessel": {
     "name": "Example Vessel",
@@ -81,7 +117,7 @@ Open:
 
 ## Example Response
 
-``` json
+```json
 {
   "distance_nm": 22.5,
   "estimated_time_hours": 1.02,
@@ -92,15 +128,46 @@ Open:
 }
 ```
 
-## Roadmap
+---
 
--   Weather integration
--   Tide/current modeling
--   Route optimization
--   Marina fuel pricing
--   AIS integration
--   Authentication
+## API Endpoint
+
+| Method | Endpoint | Description |
+|--------|----------|-------------|
+| POST | `/simulations/voyage` | Simulate a voyage and return fuel and travel calculations |
+
+---
+
+## Future Enhancements
+
+- Weather integration
+- NOAA tide & current data
+- Route optimization
+- AIS vessel integration
+- Marina fuel pricing
+- User authentication
+- Historical voyage storage
+- Docker deployment
+- CI/CD with GitHub Actions
+
+---
+
+## Why This Project?
+
+Triton demonstrates practical backend engineering skills by combining API development, data modeling, validation, and business logic into a clean, maintainable application. Rather than being a simple CRUD project, it models a real-world operational problem in the marine domain and is designed to serve as the foundation for more advanced voyage planning capabilities.
+
+---
 
 ## License
 
-MIT License
+This project is licensed under the MIT License.
+
+---
+
+## Author
+
+**Phillip Besse**
+
+M.S. Computer Science
+
+Marine Operations • Backend Development • Python • FastAPI
