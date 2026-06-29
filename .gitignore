@@ -5,8 +5,8 @@ __pycache__/
 
 # Virtual environments
 venv/
-.env
 .venv/
+.env
 
 # IDEs
 .vscode/
@@ -26,3 +26,12 @@ htmlcov/
 build/
 dist/
 *.egg-info/
+
+# Logs
+*.log
+
+# Environment files
+.env.*
+
+# FastAPI/Uvicorn
+*.pid
