@@ -6,7 +6,7 @@ class Vessel(BaseModel):
     vessel_type: str = Field(..., example="powerboat")
     length_ft: float = Field(..., gt=0, example=32)
     fuel_capacity_gallons: float = Field(..., gt=0, example=200)
-    cruise_speed_knotsL: float = Field(..., gt=0, example=22)
+    cruise_speed_knots: float = Field(..., gt=0, example=22)
     fuel_burn_gph: float = Field(..., ge=0, example=18)
     reserve_requirement_percent: float = Field(..., ge=0, le=100, example=20)
 
@@ -16,3 +16,15 @@ class Voyage(BaseModel):
     distance_nm: float = Field(..., gt=0, example=22.5)
     planned_speed_knots: float = Field(..., gt=0, example=22)
 
+class VoyageSimulationRequest(BaseModel):
+    vessel: Vessel
+    voyage: Voyage
+
+class VoyageSimulationResult(BaseModel):
+    estimated_hours: float
+    fuel_required_gallons: float
+    fuel_remaining_gallons: float
+    fuel_reserve_percent: float
+    meets_reserve_requirement: bool
+    risk_level: str
+    warnings: List[str]
