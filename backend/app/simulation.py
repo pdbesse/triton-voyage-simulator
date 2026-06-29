@@ -40,3 +40,18 @@ def calculate_voyage_simulation(
         warnings=warnings,
     )
 
+def determine_risk_level(
+    fuel_remaining: float,
+    meets_reserve_requirement: bool,
+    warning_count: int,
+) -> str:
+    if fuel_remaining < 0:
+        return "CRITICAL"
+
+    if not meets_reserve_requirement:
+        return "HIGH"
+
+    if warning_count > 0:
+        return "MODERATE"
+
+    return "LOW"
