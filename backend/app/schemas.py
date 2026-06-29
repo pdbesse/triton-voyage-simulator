@@ -9,4 +9,10 @@ class Vessel(BaseModel):
     cruise_speed_knotsL: float = Field(..., gt=0, example=22)
     fuel_burn_gph: float = Field(..., ge=0, example=18)
     reserve_requirement_percent: float = Field(..., ge=0, le=100, example=20)
-    
+
+class Voyage(BaseModel):
+    start_name: str = Field(..., example="Plymouth, MA")
+    end_name: str = Field(..., example='Provincetown, MA')
+    distance_nm: float = Field(..., gt=0, example=22.5)
+    planned_speed_knots: float = Field(..., gt=0, example=22)
+
