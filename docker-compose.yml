@@ -1,0 +1,8 @@
+services:
+  triton-api:
+    build:
+      context: ./backend
+    container_name: triton-api
+    ports:
+      - "8000:8000"
+    restart: unless-stopped

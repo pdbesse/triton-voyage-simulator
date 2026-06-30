@@ -35,3 +35,6 @@ dist/
 
 # FastAPI/Uvicorn
 *.pid
+
+# Docker
+*.pid
