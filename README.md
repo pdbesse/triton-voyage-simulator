@@ -1,5 +1,5 @@
-
 # Triton
+[![Python Tests](https://github.com/pdbesse/triton-voyage-simulator/actions/workflows/python-tests.yml/badge.svg)](https://github.com/pdbesse/triton-voyage-simulator/actions/workflows/python-tests.yml)
 ### Intelligent Voyage Planning API for Recreational & Commercial Vessels
 
 > A FastAPI application that simulates marine voyages by calculating travel time, fuel consumption, reserve compliance, and voyage feasibility from vessel and route characteristics.
